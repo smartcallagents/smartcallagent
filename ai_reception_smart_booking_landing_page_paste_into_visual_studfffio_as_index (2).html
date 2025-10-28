@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Call Agent LTD — 24/7 AI Reception & Smart Booking for Modern Companies</title>
+  <meta name="description" content="Turn missed calls into meetings. Smart Call Agent LTD answers, qualifies, and books appointments 24/7 across phone, chat, WhatsApp & email.">
+  <meta property="og:title" content="Smart Call Agent LTD — 24/7 AI Reception & Smart Booking" />
+  <meta property="og:description" content="Answer every enquiry instantly. Qualify leads and auto‑book meetings in your calendar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Ccircle cx='128' cy='128' r='120' fill='%230b172a'/%3E%3Cpath d='M70 140a58 58 0 01116 0v4a22 22 0 01-44 0v-8a12 12 0 00-24 0v8a22 22 0 01-44 0v-4z' fill='%23a5b4fc'/%3E%3C/svg%3E" />
+  <style>
+    /* =============================
+       Smart Call Agent LTD — Minimal, modern, responsive landing page
+       Paste as index.html in Visual Studio / VS Code. No build tools.
+       Customize quickly: change CSS variables below.
+    ============================== */
+    :root{
+      --bg: #070a13;          /* page background */
+      --ink: #e6e8ef;         /* base text color */
+      --muted: #a3acc2;       /* subdued text */
+      --brand: #7c8cff;       /* main brand color */
+      --brand-2: #22d3ee;     /* accent */
+      --card: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.12);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink); background:radial-gradient(1200px 800px at 20% -10%, #172554 0%, transparent 60%), radial-gradient(800px 600px at 85% 10%, rgba(34,211,238,.25) 0%, transparent 60%), var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1100px, 92vw); margin-inline:auto}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border-radius:calc(var(--radius) - 4px); border:1px solid var(--stroke); background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color:var(--ink); font-weight:600; box-shadow: var(--shadow); transition:.2s ease;}
+    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.25)}
+    .btn.primary{background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 80%, white), color-mix(in oklab, var(--brand-2) 55%, black)); color:#0b1020; border-color:transparent}
+    .btn.ghost{background:transparent; box-shadow:none}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); -webkit-backdrop-filter:blur(10px); background:linear-gradient(180deg, rgba(7,10,19,.85), rgba(7,10,19,.55)); border-bottom:1px solid var(--stroke)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.8rem 0}
+    .logo{display:flex; align-items:center; gap:.6rem; font-weight:800}
+    .logo-badge{width:34px;height:34px; border-radius:10px; background:conic-gradient(from 120deg, var(--brand), var(--brand-2)); display:grid; place-items:center}
+    .logo-badge svg{width:18px; height:18px; filter:drop-shadow(0 6px 24px rgba(124,140,255,.7))}
+    nav a{opacity:.86; font-weight:600; padding:.6rem .8rem; border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,.06); opacity:1}
+
+    /* Hero */
+    .hero{padding: clamp(3rem, 7vw, 6rem) 0 2rem; position:relative}
+    .hero-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items:center}
+    .eyebrow{display:inline-flex; gap:.5rem; align-items:center; font-size:.88rem; color:var(--muted); background:rgba(255,255,255,.06); padding:.4rem .7rem; border:1px solid var(--stroke); border-radius:100px}
+    h1{font-size: clamp(2rem, 3.8vw, 3.4rem); line-height:1.1; margin:.75rem 0 1rem; letter-spacing:.2px}
+    .sub{font-size: clamp(1rem, 1.4vw, 1.2rem); color:var(--muted); margin-bottom:1.4rem}
+    .cta-row{display:flex; gap:.8rem; flex-wrap:wrap}
+
+    .hero-card{border:1px solid var(--stroke); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); padding:1rem; box-shadow: var(--shadow)}
+    .screen{aspect-ratio: 16/10; border-radius:14px; background:linear-gradient(180deg, #0f172a, #0b1222); border:1px solid rgba(255,255,255,.12); position:relative; overflow:hidden}
+    .status{position:absolute; inset:auto 1rem 1rem 1rem; display:flex; flex-direction:column; gap:.35rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:.92rem}
+    .bubble{padding:.55rem .7rem; border-radius:12px; max-width:90%}
+    .bubble.user{background:rgba(124,140,255,.2); border:1px solid rgba(124,140,255,.35); align-self:flex-end}
+    .bubble.ai{background:rgba(255,255,255,.06); border:1px solid var(--stroke)}
+
+    /* Social proof */
+    .brands{display:grid; grid-template-columns: repeat(5, 1fr); gap:1.2rem; opacity:.9}
+    .brand{border:1px dashed var(--stroke); border-radius:12px; padding:.7rem; display:grid; place-items:center; font-weight:700; color:var(--muted)}
+
+    /* Features */
+    section{padding: clamp(2.5rem, 5vw, 4rem) 0}
+    .section-title{font-size: clamp(1.6rem, 2.4vw, 2rem); margin-bottom:.4rem}
+    .section-desc{color:var(--muted); margin-bottom:1.4rem}
+    .grid{display:grid; gap:1rem}
+    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    .card{border:1px solid var(--stroke); background:var(--card); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow)}
+    .icon{width:28px;height:28px}
+
+    /* Pricing */
+    .pricing{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem}
+    .price{font-size:2rem; font-weight:800}
+    .plan .btn{width:100%; justify-content:center; margin-top:.8rem}
+    .plan.popular{border-color: color-mix(in oklab, var(--brand) 60%, white); background:linear-gradient(180deg, rgba(124,140,255,.15), rgba(255,255,255,.03))}
+    .plan .badge{font-size:.78rem; color:#0b1020; background:linear-gradient(90deg, var(--brand), var(--brand-2)); padding:.2rem .5rem; border-radius:10px; font-weight:700;}
+
+    /* CTA strip */
+    .cta{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+
+    /* Footer */
+    footer{border-top:1px solid var(--stroke); color:var(--muted); padding:2rem 0 3rem}
+
+    /* Utilities */
+    .row{display:flex; gap:.6rem; align-items:center; flex-wrap:wrap}
+    .muted{color:var(--muted)}
+    .ok{color:var(--success)}
+    .warn{color:var(--warning)}
+    .bad{color:var(--danger)}
+    .chip{padding:.25rem .5rem; border:1px solid var(--stroke); border-radius:999px; font-size:.8rem; color:var(--muted)}
+    .reveal{opacity:0; transform:translateY(14px); transition: .6s ease}
+    .reveal.in{opacity:1; transform:none}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .brands{grid-template-columns: repeat(3, 1fr)}
+      .grid.cols-3{grid-template-columns: 1fr}
+      .pricing{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- ================= Header ================= -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9" stroke="black" stroke-opacity=".6" stroke-width="2"/><path d="M7 13c0-2.76 2.24-5 5-5s5 2.24 5 5v.5a2 2 0 01-4 0v-1a1 1 0 00-2 0v1a2 2 0 01-4 0V13z" fill="black" fill-opacity=".6"/></svg>
+        </span>
+        Smart Call Agent <span class="muted" style="font-weight:600">AI</span>
+      </a>
+      <nav class="row">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn">Book a Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">⚡️ 24/7 coverage • <span class="ok">30–60% more bookings</span> • <span class="muted">Human‑level voice & chat</span></span>
+        <h1>Turn missed calls into <span style="background:linear-gradient(90deg, var(--brand), var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">confirmed meetings</span>.</h1>
+        <p class="sub">Smart Call Agent LTD answers every enquiry, qualifies in seconds, and schedules directly into your calendar—over phone, chat, WhatsApp, and email. No hold music. No lost leads.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn primary">Get a Live Demo</a>
+          <a href="#features" class="btn ghost">See how it works</a>
+          <span class="chip">SOC2-ready • GDPR-first</span>
+        </div>
+        <div style="height:1.2rem"></div>
+        <div class="brands">
+          <div class="brand">Health</div>
+          <div class="brand">Legal</div>
+          <div class="brand">Real&nbsp;Estate</div>
+          <div class="brand">SaaS</div>
+          <div class="brand">Trades</div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="screen" aria-label="AI conversation preview">
+          <div class="status" id="demoChat">
+            <!-- Filled by JS to simulate an attractive AI booking flow -->
+          </div>
+        </div>
+        <div class="row" style="justify-content:space-between; margin-top:.6rem">
+          <span class="muted">Real‑time handoff to human • Calendar sync</span>
+          <span class="ok">Free 14‑day trial</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Features ================= -->
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title">Everything a world‑class receptionist does — on autopilot</h2>
+      <p class="section-desc">Plug‑and‑play with your tools. Delight prospects with instant responses and zero friction booking.</p>
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2"/></svg>
+            <h3 style="margin:0">Instant Answer</h3>
+          </div>
+          <p class="muted">Voice & chat that feels human. Sub‑second reply times, no queue.</p>
+        </div>
+        <div class="card reveal">
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="2"/></svg>
+            <h3 style="margin:0">Smart Qualification</h3>
+          </div>
+          <p class="muted">Custom scripts decide who to book, route, or capture as a lead—no code needed.</p>
+        </div>
+        <div class="card reveal">
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 7h8M8 12h8M8 17h8" stroke="currentColor" stroke-width="2"/><rect x="3" y="5" width="18" height="14" rx="3" ry="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            <h3 style="margin:0">Calendar Native</h3>
+          </div>
+          <p class="muted">Two‑way sync with Google, Outlook, and iCloud. Time‑zone smart, conflict‑aware.</p>
+        </div>
+        <div class="card reveal">
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2"/><path d="M7 10l5-5 5 5" stroke="currentColor" stroke-width="2"/></svg>
+            <h3 style="margin:0">CRM + Inbox</h3>
+          </div>
+          <p class="muted">Auto‑log every call/chat into HubSpot, Salesforce, or your CRM via webhook.</p>
+        </div>
+        <div class="card reveal">
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2"/></svg>
+            <h3 style="margin:0">24/7 Coverage</h3>
+          </div>
+          <p class="muted">Never miss another enquiry—after‑hours and weekends included.</p>
+        </div>
+        <div class="card reveal">
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L6 20l2-7L2 9h7z" stroke="currentColor" stroke-width="2"/></svg>
+            <h3 style="margin:0">GDPR‑first</h3>
+          </div>
+          <p class="muted">Consent flows, redaction, and EU data residency options. Enterprise ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Demo CTA ================= -->
+  <section>
+    <div class="container card reveal">
+      <div class="cta">
+        <div>
+          <h3 style="margin:.2rem 0">See it book a meeting in under 30 seconds</h3>
+          <p class="muted">We’ll use your real availability and script. Bring a tough scenario—we’ll handle it.</p>
+        </div>
+        <div class="row">
+          <a href="#contact" class="btn primary">Book Live Demo</a>
+          <a href="#faq" class="btn">Questions? Read FAQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Testimonials ================= -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Customers see more bookings and happier clients</h2>
+      <p class="section-desc">From local clinics to nationwide service teams, Smart Call Agent LTD quietly powers the first impression.</p>
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <p>“Week one, our no‑show rate dropped and we captured 42% more after‑hours leads. It just works.”</p>
+          <p class="muted">— Emma K., Practice Manager</p>
+        </div>
+        <div class="card reveal">
+          <p>“Calls are answered instantly and qualified before they hit our team. The calendar handoff is seamless.”</p>
+          <p class="muted">— Raj P., Operations Director</p>
+        </div>
+        <div class="card reveal">
+          <p>“We replaced a patchwork of tools. Support is superb and onboarding took an afternoon.”</p>
+          <p class="muted">— Laura M., COO</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Pricing ================= -->
+  <section id="pricing">
+    <div class="container">
+      <h2 class="section-title">Simple pricing that scales with you</h2>
+      <p class="section-desc">14‑day free trial • Cancel anytime • No setup fees</p>
+      <div class="pricing">
+        <!-- Upfront setup -->
+        <div class="card plan popular reveal">
+          <div class="row" style="justify-content:space-between">
+            <h3 style="margin:0">Upfront Setup</h3>
+            <span class="badge">One‑time</span>
+          </div>
+          <p class="muted">Kickoff, script design, and calendar/phone integration.</p>
+          <div class="price">£100 <span class="muted" style="font-size:1rem">once</span></div>
+          <ul class="muted">
+            <li>Onboarding + script configuration</li>
+            <li>Calendar + number setup</li>
+            <li>Team handoff training</li>
+          </ul>
+          <a href="#contact" class="btn primary">Get started</a>
+        </div>
+        
+        <!-- Performance pricing -->
+        <div class="card plan reveal">
+          <div class="row" style="justify-content:space-between">
+            <h3 style="margin:0">Performance Fees</h3>
+            <span class="chip">Billed monthly</span>
+          </div>
+          <p class="muted">At the end of each month, you pay based on customers your AI agent brings you.</p>
+          <div class="row" style="gap:.8rem; align-items:stretch">
+            <div class="card" style="flex:1; text-align:center">
+              <div class="price" style="margin:0">4.5%</div>
+              <div class="muted">small services</div>
+            </div>
+            <div class="card" style="flex:1; text-align:center">
+              <div class="price" style="margin:0">2%</div>
+              <div class="muted">large services</div>
+            </div>
+          </div>
+          <ul class="muted">
+            <li>Transparent month‑end statement</li>
+            <li>No lock‑in. Cancel anytime.</li>
+          </ul>
+          <a href="#contact" class="btn">See a cost example</a>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="card plan reveal">
+          <div class="row" style="justify-content:space-between">
+            <h3 style="margin:0">90‑Day Guarantee</h3>
+            <span class="chip">Risk‑free</span>
+          </div>
+          <p class="muted">If within 90 days we bring you <em>fewer customers</em> than your usual average, we return the £100 setup fee.</p>
+          <ul class="muted">
+            <li>Baseline: your historical 3‑month average</li>
+            <li>Measured by closed bookings attributed to the AI agent</li>
+          </ul>
+          <a href="#contact" class="btn">Claim your guarantee</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="grid">
+        <details class="card reveal"><summary><strong>How do bookings sync to our calendars?</strong></summary><p class="muted">Two‑way sync with Google, Outlook, and iCloud via secure OAuth. We respect existing holds, working hours, and buffer times.</p></details>
+        <details class="card reveal"><summary><strong>Does it hand off to a human?</strong></summary><p class="muted">Yes. Real‑time warm transfer to your team on phone or chat based on rules (e.g. VIP, emergencies).</p></details>
+        <details class="card reveal"><summary><strong>Is data compliant with GDPR?</strong></summary><p class="muted">Yes. Consent flows, optional EU data residency, and subject‑access tooling are available on Growth and above.</p></details>
+        <details class="card reveal"><summary><strong>Can we keep our phone number?</strong></summary><p class="muted">Absolutely. Port your existing number or forward to ours; outbound calls display your caller ID.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Contact ================= -->
+  <section id="contact">
+    <div class="container">
+      <div class="card reveal">
+        <h2 class="section-title" style="margin-bottom:.2rem">Book a live demo</h2>
+        <p class="section-desc">Tell us a bit about your setup and preferred times. We’ll confirm by email.</p>
+        <form class="grid" id="contactForm" style="grid-template-columns: repeat(2, 1fr); gap: .8rem">
+          <label class="muted">Your name<input required name="name" placeholder="Jane Doe" style="width:100%"></label>
+          <label class="muted">Work email<input required type="email" name="email" placeholder="jane@company.com" style="width:100%"></label>
+          <label class="muted" style="grid-column: span 2">Company<input name="company" placeholder="Company Ltd" style="width:100%"></label>
+          <label class="muted">Phone (optional)<input name="phone" placeholder="+44 ..." style="width:100%"></label>
+          <label class="muted">Preferred time<input name="time" placeholder="e.g. Tue 2–4pm" style="width:100%"></label>
+          <label class="muted" style="grid-column: span 2">Notes<textarea name="notes" placeholder="Anything we should know?" rows="4" style="width:100%"></textarea></label>
+          <div class="row" style="grid-column: span 2; justify-content:space-between">
+            <label class="row muted" style="gap:.4rem"><input type="checkbox" required> I agree to be contacted about this enquiry.</label>
+            <button class="btn primary" type="submit">Request demo</button>
+          </div>
+        </form>
+        <p id="formMsg" class="muted" style="margin-top:.6rem"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer>
+    <div class="container row" style="justify-content:space-between">
+      <div>© <span id="year"></span> Smart Call Agent LTD • <a href="#" class="muted">Privacy</a> • <a href="#" class="muted">Security</a></div>
+      <div class="row"><span class="chip">UK & EU</span><span class="chip">24/7</span><span class="chip">Made with ❤️</span></div>
+    </div>
+  </footer>
+
+  <script>
+    // Tiny helpers to make the page feel alive — no external libs.
+    const $ = (sel, el=document) => el.querySelector(sel);
+    const $$ = (sel, el=document) => [...el.querySelectorAll(sel)];
+
+    // Intersection-based reveal animations
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') })
+    }, {threshold:.12});
+    $$('.reveal').forEach(el=> io.observe(el));
+
+    // Year in footer
+    $('#year').textContent = new Date().getFullYear();
+
+    // Demo chat: simulate AI receptionist booking flow
+    const chat = $('#demoChat');
+    const lines = [
+      {role:'user', text:'Hi, can I book a consultation next week?'},
+      {role:'ai', text:'Absolutely! What day works best—Tuesday or Wednesday?'},
+      {role:'user', text:'Wednesday morning, please.'},
+      {role:'ai', text:'Great. I see 9:30, 10:00, or 10:30 available. Which do you prefer?'},
+      {role:'user', text:'10:00 works.'},
+      {role:'ai', text:'Booked for Wed 10:00 with Sarah. I’ve sent a confirmation and calendar invite. Anything else I can help with?'},
+    ];
+    function addBubble({role,text}, delay){
+      setTimeout(()=>{
+        const b = document.createElement('div');
+        b.className = 'bubble ' + (role==='user' ? 'user' : 'ai');
+        b.textContent = text; chat.appendChild(b);
+        chat.parentElement.scrollTop = chat.parentElement.scrollHeight;
+      }, delay);
+    }
+    let t=600; lines.forEach(l=>{ addBubble(l,t); t+= 900 + (Math.random()*500|0); });
+
+    // Contact form — demo only (no backend). Opens mail client and shows a success message.
+    $('#contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      const subject = encodeURIComponent('Demo request — ' + (data.company||'Company'));
+      const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company||''}\nPhone: ${data.phone||''}\nPreferred time: ${data.time||''}\nNotes: ${data.notes||''}`);
+      // Replace with your sales email address:
+      window.location.href = `mailto:rudolf@smartcallagent.org?subject=${subject}&body=${body}`;
+      $('#formMsg').textContent = 'Thanks! We\'ll be in touch shortly.';
+    });
+
+    // Smooth scroll for same-page links
+    $$('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+
+  <!-- ================= Quick customisation guide =================
+    1) Replace "Smart Call Agent LTD" with your brand.
+    2) Update brand colours in :root (--brand / --brand-2).
+    3) Swap pricing copy and currency.
+    4) Put a real email in rudolf@smartcallagent.org (contact form uses mailto).
+    5) Optional: add your logo image; change favicon data-URL in <head>.
+    6) Deploy anywhere static (GitHub Pages, Netlify, Vercel, IIS as static site).
+  ================================================================ -->
+</body>
+</html>
